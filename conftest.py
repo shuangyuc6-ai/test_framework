@@ -75,9 +75,12 @@ def pytest_runtest_makereport(item, call):
         if page_fixture:
             _page = page_fixture.page if hasattr(page_fixture, "page") else page_fixture
             screenshot_path = f"reports/FAIL_{item.name}.png"
-            _page.screenshot(path=screenshot_path)
-            allure.attach.file(
-                screenshot_path,
-                name="失败截图",
-                attachment_type=allure.attachment_type.PNG
-            )
+            try:
+                _page.screenshot(path=screenshot_path, timeout=5000)
+                allure.attach.file(
+                    screenshot_path,
+                    name="失败截图",
+                    attachment_type=allure.attachment_type.PNG
+                )
+            except Exception:
+                pass  # 页面已不可用（超时/已关闭），跳过截图，避免 INTERNALERROR

@@ -16,7 +16,10 @@ class BaiduPage(BasePage):
     NEWS_TAB       = "text=资讯"
     SUGGESTION_BOX = ".bdsug-s"
     # 百度隐私协议弹窗的关闭按钮（出现时需要先关掉）
-    PRIVACY_BTN    = "#s-def-map-close, .c-privacy-agree-btn, text=同意"
+    # 多个选择器用逗号分隔，兼容百度不同时期的弹窗 DOM 结构
+    PRIVACY_BTN    = "#s-def-map-close"
+    PRIVACY_BTN2   = ".c-privacy-agree-btn"
+    PRIVACY_BTN3   = "button:has-text('同意'), button:has-text('确定'), button:has-text('我知道了')"
 
     # ---------- 动作 ----------
     def open(self):
@@ -25,19 +28,24 @@ class BaiduPage(BasePage):
 
     def _close_popup(self):
         """关闭百度可能出现的隐私协议/广告弹窗，不出现则跳过"""
-        try:
-            btn = self.page.locator(self.PRIVACY_BTN).first
-            if btn.is_visible(timeout=3000):
-                btn.click()
-        except Exception:
-            pass  # 没有弹窗，正常跳过
+        for selector in [self.PRIVACY_BTN, self.PRIVACY_BTN2, self.PRIVACY_BTN3]:
+            try:
+                btn = self.page.locator(selector).first
+                btn.wait_for(state="visible", timeout=3000)
+                btn.click(force=True)
+                btn.wait_for(state="hidden", timeout=3000)
+                return  # 成功关闭，退出
+            except Exception:
+                continue  # 当前选择器未匹配，尝试下一个
 
     def search(self, keyword: str):
-        """输入关键词并提交搜索"""
+        """输入关键词并提交搜索（用 Enter 键提交，绕开按钮被遮挡的问题）"""
         self.open()
         self.fill(self.SEARCH_INPUT, keyword)
-        self.click(self.SEARCH_BTN)
-        self.wait_network_idle()
+        # 用 Enter 键提交，比点击 #su 更稳定（不受弹窗遮挡影响）
+        self.page.locator(self.SEARCH_INPUT).press("Enter")
+        # 等待结果容器出现，比 networkidle 更可靠（百度有持续后台请求）
+        self.page.wait_for_selector(self.RESULT_ITEMS, state="attached", timeout=15000)
 
     def get_result_count(self) -> int:
         return self.count(self.RESULT_ITEMS)

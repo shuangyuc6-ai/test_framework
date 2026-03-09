@@ -33,15 +33,17 @@ class BasePage:
 
     def click(self, selector: str):
         logger.info(f"点击: {selector}")
-        # 先等元素可见再点击，避免元素还未渲染就操作
-        self.page.wait_for_selector(selector, state="visible", timeout=15000)
-        self.page.locator(selector).click()
+        # 等待元素挂载到 DOM（不要求可见，避免被弹窗遮挡时超时）
+        self.page.wait_for_selector(selector, state="attached", timeout=15000)
+        # force=True：跳过可见性检查，直接点击；适用于元素被弹窗遮挡的场景
+        self.page.locator(selector).click(force=True)
 
     def fill(self, selector: str, text: str):
         logger.info(f"输入 [{text}] -> {selector}")
-        # 先等元素可见再输入，解决动态渲染页面元素未就绪的问题
-        self.page.wait_for_selector(selector, state="visible", timeout=15000)
-        self.page.locator(selector).fill(text)
+        # 等待元素挂载到 DOM（不要求可见，避免被遮挡时超时）
+        self.page.wait_for_selector(selector, state="attached", timeout=15000)
+        # force=True：跳过可见性检查，直接填充；适用于元素被弹窗遮挡的场景
+        self.page.locator(selector).fill(text, force=True)
 
     def get_text(self, selector: str) -> str:
         return self.page.locator(selector).inner_text()
