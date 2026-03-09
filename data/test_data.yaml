@@ -1,0 +1,26 @@
+# 测试数据配置文件
+# 在测试中通过 yaml.safe_load 读取
+
+baidu_search:
+  normal_keywords:
+    - "Python"
+    - "自动化测试"
+    - "Pytest框架"
+    - "测试开发工程师"
+    - "Docker部署"
+  special_keywords:
+    - "@#$%"
+    - "123456"
+    - "   "
+
+weather_api:
+  cities:
+    - code: "110000"
+      name: "北京"
+    - code: "310000"
+      name: "上海"
+    - code: "440100"
+      name: "广州"
+    - code: "440300"
+      name: "深圳"
+  invalid_city_code: "999999"

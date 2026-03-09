@@ -1,0 +1,58 @@
+name: Autotest CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # 每天凌晨 2 点自动运行（北京时间 10:00）
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+          playwright install-deps
+
+      - name: 运行接口测试
+        run: pytest testcases/api -v --alluredir=reports/allure-results
+        continue-on-error: true
+
+      - name: 运行 UI 测试
+        run: pytest testcases/ui -v --alluredir=reports/allure-results
+        continue-on-error: true
+
+      - name: 上传 Allure 测试结果
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: reports/allure-results
+
+      - name: 生成 Allure 报告页面
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: reports/allure-results
+
+      - name: 发布 Allure 报告到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
