@@ -16,8 +16,8 @@ class BasePage:
     # ---------- 导航 ----------
     def navigate(self, url: str):
         logger.info(f"导航至: {url}")
-        self.page.goto(url)
-        self.page.wait_for_load_state("domcontentloaded")
+        # 等待网络完全空闲，确保动态页面（如百度）完全加载
+        self.page.goto(url, wait_until="networkidle", timeout=30000)
 
     @property
     def current_url(self) -> str:
@@ -33,10 +33,14 @@ class BasePage:
 
     def click(self, selector: str):
         logger.info(f"点击: {selector}")
+        # 先等元素可见再点击，避免元素还未渲染就操作
+        self.page.wait_for_selector(selector, state="visible", timeout=15000)
         self.page.locator(selector).click()
 
     def fill(self, selector: str, text: str):
-        logger.info(f"输入 [{text}] → {selector}")
+        logger.info(f"输入 [{text}] -> {selector}")
+        # 先等元素可见再输入，解决动态渲染页面元素未就绪的问题
+        self.page.wait_for_selector(selector, state="visible", timeout=15000)
         self.page.locator(selector).fill(text)
 
     def get_text(self, selector: str) -> str:

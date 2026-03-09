@@ -24,7 +24,7 @@ os.makedirs("reports", exist_ok=True)
 def browser():
     """整个测试会话共享一个浏览器实例"""
     with sync_playwright() as p:
-        b: Browser = p.chromium.launch(headless=True)
+        b: Browser = p.chromium.launch(headless=False)
         yield b
         b.close()
 
