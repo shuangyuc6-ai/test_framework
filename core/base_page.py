@@ -64,6 +64,7 @@ class BasePage:
     # ---------- 截图 ----------
     def screenshot(self, name: str):
         path = f"reports/{name}.png"
-        self.page.screenshot(path=path)
+        # timeout=10000：防止页面字体/资源加载卡住导致截图超时
+        self.page.screenshot(path=path, timeout=10000)
         logger.info(f"截图已保存: {path}")
         return path

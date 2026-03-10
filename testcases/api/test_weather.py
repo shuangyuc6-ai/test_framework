@@ -5,12 +5,12 @@ API 文档: https://lbs.amap.com/api/webservice/guide/api/weatherinfo
 
 覆盖场景：正常城市查询、字段完整性、异常参数、多城市数据驱动
 """
+import time
 import pytest
 import allure
 from core.http_client import HttpClient
 
-# ⚠️  替换为你自己的高德 Key（免费注册即可获得）
-AMAP_KEY = "your_amap_key_here"
+AMAP_KEY = "313c3cfc0bd0dffdc7f38d0f5a1c227c"
 
 WEATHER_PATH = "/v3/weather/weatherInfo"
 
@@ -57,26 +57,37 @@ class TestWeatherAPI:
     @allure.story("响应字段完整性")
     def test_response_fields_completeness(self, weather_client: HttpClient):
         """校验顶层响应字段完整性"""
+        time.sleep(1)  # 避免紧接上一个用例触发高德免费 Key QPS 超限（10021）
         resp = weather_client.get(WEATHER_PATH, params={
             "key": AMAP_KEY,
             "city": "110000",
         })
         weather_client.assert_status(resp, 200)
+        data = resp.json()
+        # QPS 超限时跳过，避免误报（非被测功能本身的问题）
+        if data.get("infocode") == "10021":
+            pytest.skip("高德 API QPS 超限（10021），跳过本次断言")
         for field in ["status", "info", "infocode", "lives"]:
             weather_client.assert_json_field(resp, field)
 
     @allure.story("异常参数-无效城市编码")
     def test_invalid_city_code(self, weather_client: HttpClient):
-        """传入无效城市编码，接口应返回错误信息而非崩溃"""
+        """传入无效城市编码，接口应返回错误或 lives 数据为空/无效"""
         resp = weather_client.get(WEATHER_PATH, params={
             "key": AMAP_KEY,
             "city": "999999",
         })
         weather_client.assert_status(resp, 200)
         data = resp.json()
-        # 无效编码时 infocode 不为 10000
-        assert data.get("infocode") != "10000" or data.get("lives") == [], \
-            "无效城市编码应返回错误或空数据"
+        # 高德对无效编码有两种表现：
+        # 1. infocode != 10000（返回错误）
+        # 2. infocode = 10000 但 lives 为空或每项为空对象（[[]] 或 []）
+        infocode = data.get("infocode")
+        lives = data.get("lives", [])
+        is_error = infocode != "10000"
+        is_empty_lives = len(lives) == 0 or all(not item for item in lives)
+        assert is_error or is_empty_lives, \
+            f"无效城市编码应返回错误或空数据，实际: {data}"
 
     @allure.story("异常参数-缺少 Key")
     def test_missing_api_key(self, weather_client: HttpClient):

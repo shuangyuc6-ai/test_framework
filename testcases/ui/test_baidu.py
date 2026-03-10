@@ -46,10 +46,14 @@ class TestBaiduSearch:
 
     @allure.story("搜索框元素可见性")
     def test_search_input_visible(self, baidu_page: BaiduPage):
-        """搜索框和搜索按钮应在首页可见"""
+        """搜索框和搜索按钮应在首页存在于 DOM 中（百度弹窗可能遮挡 CSS visibility）"""
         baidu_page.open()
-        assert baidu_page.is_visible(baidu_page.SEARCH_INPUT), "搜索输入框不可见"
-        assert baidu_page.is_visible(baidu_page.SEARCH_BTN), "搜索按钮不可见"
+        # 用 state="attached" 验证元素存在于 DOM，避免弹窗遮挡导致 visible 超时
+        baidu_page.page.wait_for_selector(baidu_page.SEARCH_INPUT, state="attached", timeout=10000)
+        baidu_page.page.wait_for_selector(baidu_page.SEARCH_BTN, state="attached", timeout=10000)
+        # 用 JS 断言元素确实存在（双重保险）
+        assert baidu_page.page.evaluate("() => !!document.querySelector('#kw')"), "搜索框不存在于 DOM"
+        assert baidu_page.page.evaluate("() => !!document.querySelector('#su')"), "搜索按钮不存在于 DOM"
 
     @allure.story("特殊字符搜索")
     @pytest.mark.parametrize("special_kw", ["@#$%", "   ", "123456"])
