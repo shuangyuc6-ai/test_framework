@@ -1,0 +1,2 @@
+[09:16:07] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'city': '110000'}  json=None
+[09:16:07] [INFO] core.http_client -   ← 200  {"status":"0","info":"INVALID_USER_KEY","infocode":"10001"}

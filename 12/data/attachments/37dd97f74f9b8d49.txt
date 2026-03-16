@@ -1,0 +1,2 @@
+[09:15:43] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '440100', 'extensions': 'base'}  json=None
+[09:15:44] [INFO] core.http_client -   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"广东","city":"广州市","adcode":"440100","weather":"晴","temperature":"26","winddirection":"南","windpower":"≤3","humidity":"39",
