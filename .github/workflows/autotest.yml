@@ -5,9 +5,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  # 每天凌晨 2 点自动运行（北京时间 10:00）
   schedule:
     - cron: "0 2 * * *"
+
+permissions:
+  contents: write  # ← 新增，允许推送到 gh-pages 分支
 
 jobs:
   test:
@@ -50,7 +52,7 @@ jobs:
           allure_results: reports/allure-results
 
       - name: 发布 Allure 报告到 GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # ← 升级到 v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
