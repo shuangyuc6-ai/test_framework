@@ -61,6 +61,15 @@ def weather_client() -> HttpClient:
     return HttpClient(base_url="https://restapi.amap.com")
 
 
+@pytest.fixture(scope="session")
+def github_client() -> HttpClient:
+    """GitHub REST API 客户端（无需 Key，匿名限速 60次/小时）"""
+    client = HttpClient(base_url="https://api.github.com")
+    client.set_header("Accept", "application/vnd.github+json")
+    client.set_header("X-GitHub-Api-Version", "2022-11-28")
+    return client
+
+
 # ========================
 #  失败自动截图 Hook
 # ========================

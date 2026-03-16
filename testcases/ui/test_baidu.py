@@ -58,9 +58,14 @@ class TestBaiduSearch:
     @allure.story("特殊字符搜索")
     @pytest.mark.parametrize("special_kw", ["@#$%", "   ", "123456"])
     def test_special_character_search(self, baidu_page: BaiduPage, special_kw):
-        """特殊字符/数字搜索不应导致页面崩溃"""
-        baidu_page.search(special_kw)
-        # 无论结果如何，页面应正常响应（不抛异常即通过）
+        """特殊字符/数字搜索不应导致页面崩溃
+        纯空格等无效关键词百度可能不跳转结果页，只断言页面正常响应即可
+        """
+        baidu_page.open()
+        baidu_page.fill(baidu_page.SEARCH_INPUT, special_kw)
+        baidu_page.page.locator(baidu_page.SEARCH_INPUT).press("Enter")
+        # 等待页面稳定（URL 变化或保持原页面均可），不强制要求结果容器出现
+        baidu_page.page.wait_for_load_state("domcontentloaded", timeout=10000)
         assert baidu_page.current_url is not None
 
     @allure.story("截图存档")
