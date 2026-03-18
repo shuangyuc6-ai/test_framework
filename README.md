@@ -3,9 +3,10 @@
 > 一个基于 **Pytest + Playwright + Requests + Allure** 的 Web 端到端自动化测试框架
 > 覆盖 UI 自动化、接口测试、数据驱动、失败截图、CI/CD 全链路实践
 
-![CI](https://github.com/your-username/web-autotest-framework/actions/workflows/autotest.yml/badge.svg)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Pytest](https://img.shields.io/badge/Pytest-8.x-green)
+![CI](https://github.com/shuangyuc6-ai/test_framework/actions/workflows/autotest.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Pytest](https://img.shields.io/badge/Pytest-9.0.2-green)
+![Allure报告](docs/allure_report.png)
 
 ---
 
@@ -17,14 +18,18 @@ web-autotest-framework/
 │   ├── base_page.py         # UI POM 基类（封装 Playwright 操作）
 │   └── http_client.py       # 接口请求封装（Session / 断言 / 日志）
 ├── pages/                   # 页面对象层
-│   └── baidu_page.py        # 百度搜索页面对象
+│   ├── baidu_page.py        # 百度搜索页面对象
+│   └── opencart_login_page.py # OpenCart 登录页面对象
 ├── testcases/               # 测试用例层
 │   ├── ui/
-│   │   └── test_baidu.py    # 百度 UI 测试（参数化 / 截图）
+│   │   ├── test_baidu.py    # 百度 UI 测试（参数化 / 截图）
+│   │   └── test_opencart_login.py # OpenCart 登录测试
 │   └── api/
-│       └── test_weather.py  # 高德天气接口测试
+│       ├── test_weather.py  # 高德天气接口测试
+│       └── test_github.py   # GitHub API 测试
 ├── data/
-│   └── test_data.yaml       # 测试数据配置
+│   ├── test_data.yaml       # 测试数据配置
+│   └── opencart_login.yaml  # OpenCart 登录测试数据
 ├── utils/
 │   ├── faker_helper.py      # Mock 数据生成
 │   └── logger.py            # 统一日志
@@ -106,7 +111,9 @@ allure serve reports/allure-results
 
 ## 测试用例覆盖
 
-### UI 测试（百度搜索）
+### UI 测试
+
+#### 百度搜索
 
 | 用例 | 场景 |
 |------|------|
@@ -116,7 +123,18 @@ allure serve reports/allure-results
 | test_special_character_search | 特殊字符不崩溃 |
 | test_search_with_screenshot | 搜索截图存档 |
 
-### 接口测试（高德天气 API）
+#### OpenCart 登录
+
+| 用例 | 场景 |
+|------|------|
+| test_login_success | 正常登录成功 |
+| test_login_empty_username | 空用户名登录 |
+| test_login_empty_password | 空密码登录 |
+| test_login_invalid_credentials | 无效凭据登录 |
+
+### 接口测试
+
+#### 高德天气 API
 
 | 用例 | 场景 |
 |------|------|
@@ -125,6 +143,14 @@ allure serve reports/allure-results
 | test_invalid_city_code | 无效城市编码容错 |
 | test_missing_api_key | 缺少 Key 鉴权校验 |
 | test_forecast_weather | 预报天气查询 |
+
+#### GitHub API
+
+| 用例 | 场景 |
+|------|------|
+| test_get_repos | 获取用户仓库列表 |
+| test_get_user_info | 获取用户信息 |
+| test_repo_not_found | 仓库不存在 |
 
 ---
 
