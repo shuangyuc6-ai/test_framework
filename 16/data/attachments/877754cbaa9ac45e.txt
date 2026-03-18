@@ -1,2 +1,0 @@
-[04:28:21] [INFO] core.http_client - [GET] https://api.github.com/repos/pytest-dev/pytest/contributors  params={'per_page': 3, 'anon': 'false'}  json=None
-[04:28:21] [INFO] core.http_client -   ← 200  [{"login":"nicoddemus","id":1085180,"node_id":"MDQ6VXNlcjEwODUxODA=","avatar_url":"https://avatars.githubusercontent.com/u/1085180?v=4","gravatar_id":"","url":"https://api.github.com/users/nicoddemus"

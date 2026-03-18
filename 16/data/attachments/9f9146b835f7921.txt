@@ -1,2 +1,0 @@
-[04:28:20] [INFO] core.http_client - [GET] https://api.github.com/users/this-user-definitely-does-not-exist-xyzxyz123  params=None  json=None
-[04:28:20] [INFO] core.http_client -   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}

@@ -1,0 +1,2 @@
+[08:42:54] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '110000'}  json=None
+[08:42:55] [INFO] core.http_client -   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"北京","city":"北京市","adcode":"110000","weather":"晴","temperature":"13","winddirection":"西北","windpower":"≤3","humidity":"6",

@@ -1,0 +1,2 @@
+[08:42:48] [INFO] core.http_client - [GET] https://api.github.com/repos/this-owner-xyz/this-repo-xyz-not-exist  params=None  json=None
+[08:42:48] [INFO] core.http_client -   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}

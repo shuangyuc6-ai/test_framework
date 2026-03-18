@@ -1,0 +1,4 @@
+INFO     core.http_client:http_client.py:20 [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '310000', 'extensions': 'all'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: restapi.amap.com
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://restapi.amap.com:443 "GET /v3/weather/weatherInfo?key=313c3cfc0bd0dffdc7f38d0f5a1c227c&city=310000&extensions=all HTTP/1.1" 200 None
+INFO     core.http_client:http_client.py:22   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","forecasts":[{"city":"上海市","adcode":"310000","province":"上海","reporttime":"2026-03-18 16:32:10","casts":[{"date":"2026-03-18","week":"3","daywe
