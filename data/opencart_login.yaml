@@ -1,0 +1,47 @@
+# ExpandTesting 登录练习页测试数据
+# 站点: https://practice.expandtesting.com/login
+# 专为自动化测试设计，无 Bot 检测，公开账号长期有效
+
+site:
+  base_url: "https://practice.expandtesting.com"
+  login_path: "/login"
+  secure_path: "/secure"
+
+# 正常登录：应成功跳转到 Secure Area 页
+valid_credentials:
+  username: "practice"
+  password: "SuperSecretPassword!"
+
+# 异常登录数据驱动：全部应登录失败并展示错误提示
+invalid_credentials:
+  - id: "wrong_password"
+    desc: "正确用户名 + 错误密码"
+    username: "practice"
+    password: "wrong_password_123"
+
+  - id: "wrong_username"
+    desc: "不存在的用户名"
+    username: "notexist_xyz"
+    password: "SuperSecretPassword!"
+
+  - id: "wrong_both"
+    desc: "用户名和密码均错误"
+    username: "fakeuser"
+    password: "fakepwd"
+
+# 空字段校验：缺少必填项时应有错误提示
+empty_fields:
+  - id: "empty_all"
+    desc: "用户名和密码均为空"
+    username: ""
+    password: ""
+
+  - id: "empty_password"
+    desc: "仅用户名，密码为空"
+    username: "practice"
+    password: ""
+
+  - id: "empty_username"
+    desc: "仅密码，用户名为空"
+    username: ""
+    password: "SuperSecretPassword!"

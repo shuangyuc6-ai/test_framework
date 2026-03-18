@@ -14,10 +14,9 @@ class BasePage:
         self.page = page
 
     # ---------- 导航 ----------
-    def navigate(self, url: str):
+    def navigate(self, url: str, wait_until: str = "networkidle", timeout: int = 30000):
         logger.info(f"导航至: {url}")
-        # 等待网络完全空闲，确保动态页面（如百度）完全加载
-        self.page.goto(url, wait_until="networkidle", timeout=30000)
+        self.page.goto(url, wait_until=wait_until, timeout=timeout)
 
     @property
     def current_url(self) -> str:

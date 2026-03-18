@@ -12,6 +12,7 @@ from playwright.sync_api import sync_playwright, Browser, Page
 
 from core.http_client import HttpClient
 from pages.baidu_page import BaiduPage
+from pages.opencart_login_page import OpenCartLoginPage
 
 os.makedirs("reports", exist_ok=True)
 
@@ -44,6 +45,12 @@ def page(browser) -> Page:
 @pytest.fixture
 def baidu_page(page) -> BaiduPage:
     return BaiduPage(page)
+
+
+@pytest.fixture
+def opencart_login_page(page) -> OpenCartLoginPage:
+    """OpenCart Demo 登录页面对象，每条用例独立 Page"""
+    return OpenCartLoginPage(page)
 
 
 # ========================
