@@ -1,2 +1,0 @@
-[02:51:51] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '440300', 'extensions': 'base'}  json=None
-[02:51:52] [INFO] core.http_client -   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"广东","city":"深圳市","adcode":"440300","weather":"晴","temperature":"26","winddirection":"西南","windpower":"≤3","humidity":"65"

@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/search/repositories  params={'q': 'requests', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /search/repositories?q=requests&per_page=5&sort=stars&order=desc HTTP/1.1" 200 None
-INFO     core.http_client:http_client.py:22   ← 200  {"total_count":283464,"incomplete_results":false,"items":[{"id":36502,"node_id":"MDEwOlJlcG9zaXRvcnkzNjUwMg==","name":"git","full_name":"git/git","private":false,"owner":{"login":"git","id":18133,"nod

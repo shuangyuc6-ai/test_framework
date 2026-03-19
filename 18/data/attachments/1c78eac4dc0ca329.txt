@@ -1,2 +1,0 @@
-[02:51:47] [INFO] core.http_client - [GET] https://api.github.com/repos/torvalds/linux/topics  params=None  json=None
-[02:51:47] [INFO] core.http_client -   ← 200  {"names":[]}
