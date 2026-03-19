@@ -1,0 +1,2 @@
+[04:27:32] [INFO] core.http_client - [GET] https://api.github.com/repos/torvalds/linux  params=None  json=None
+[04:27:32] [INFO] core.http_client -   ← 200  {"id":2325298,"node_id":"MDEwOlJlcG9zaXRvcnkyMzI1Mjk4","name":"linux","full_name":"torvalds/linux","private":false,"owner":{"login":"torvalds","id":1024025,"node_id":"MDQ6VXNlcjEwMjQwMjU=","avatar_url
