@@ -8,6 +8,20 @@
 ![Pytest](https://img.shields.io/badge/Pytest-9.0.2-green)
 ![Allure报告](docs/allure_report.png)
 
+
+## 性能测试报告
+
+> 测试目标：httpbin.org | 并发用户数：10 | 持续时间：26s
+
+### 请求统计
+![request stats](docs/perf_stats.png)
+
+![request time stats](docs/perf_time_stats.png)
+
+### 响应时间趋势
+![response time](docs/perf_charts.png)
+
+结论：10并发下失败率为0，平均响应时间500ms左右，系统表现稳定。
 ---
 
 ## 框架架构
@@ -33,6 +47,13 @@ web-autotest-framework/
 ├── utils/
 │   ├── faker_helper.py      # Mock 数据生成
 │   └── logger.py            # 统一日志
+├── perf/
+│   └── locust_httpbin.py    # 性能压测脚本
+├── docs/
+│   ├── allure_report.png    # Allure 报告截图
+│   ├── perf_stats.png       # 性能测试统计截图
+│   ├── perf_time_stats.png  # 性能测试时间统计截图
+│   └── perf_charts.png      # 性能测试图表截图
 ├── .github/workflows/
 │   └── autotest.yml         # GitHub Actions CI 配置
 ├── conftest.py              # 全局 Fixture + 失败自动截图
@@ -51,6 +72,7 @@ web-autotest-framework/
 | 失败自动截图 | 用例失败时自动截图并附加到 Allure 报告 |
 | 接口断言封装 | 统一状态码 / 字段断言，减少重复代码 |
 | Allure 可视化报告 | 包含步骤、截图、请求/响应详情 |
+| 性能测试 | 基于 Locust 的并发压测，支持 HTML 报告生成 |
 | CI/CD | GitHub Actions 自动触发，结果发布至 GitHub Pages |
 | Mock 数据 | 基于 Faker 生成中文测试数据 |
 
@@ -154,6 +176,35 @@ allure serve reports/allure-results
 
 ---
 
+## 性能测试
+
+### 测试目标
+- **httpbin.org**：稳定公开服务，无鉴权，适合并发基准测试
+- **GitHub API**：只读接口（匿名限速 60次/小时，作为补充场景）
+
+### 测试场景
+- **GET 请求**：基础 GET、带参数 GET、UUID 生成、请求头回显、IP 获取
+- **POST 请求**：JSON 格式提交、表单格式提交
+- **状态码验证**：验证 200 状态码返回
+- **延迟场景**：模拟 1 秒延迟接口，测试超时容忍度
+
+### 运行方式
+```bash
+# 无头批量模式，自动生成 HTML 报告
+locust -f perf/locust_httpbin.py --headless \
+  -u 20 -r 5 -t 30s \
+  --html reports/perf_report.html \
+  --host https://httpbin.org
+```
+
+### 参数说明
+- `-u`：并发用户数
+- `-r`：每秒用户增长速率（ramp-up）
+- `-t`：测试持续时间
+- `--html`：HTML 报告输出路径
+
+---
+
 ## 技术栈
 
 - **Python 3.12**
@@ -162,6 +213,7 @@ allure serve reports/allure-results
 - **Requests** — HTTP 接口测试
 - **Allure** — 可视化测试报告
 - **Faker** — Mock 数据生成
+- **Locust** — 性能压测工具
 - **GitHub Actions** — CI/CD 自动化
 
 ---
