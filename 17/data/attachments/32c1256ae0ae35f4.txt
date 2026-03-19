@@ -1,2 +1,0 @@
-[08:42:50] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '310000', 'extensions': 'base'}  json=None
-[08:42:51] [INFO] core.http_client -   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"上海","city":"上海市","adcode":"310000","weather":"小雨","temperature":"10","winddirection":"西北","windpower":"≤3","humidity":"90
