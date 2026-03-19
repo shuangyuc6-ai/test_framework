@@ -16,8 +16,6 @@
 ### 请求统计
 ![request stats](docs/perf_stats.png)
 
-![request time stats](docs/perf_time_stats.png)
-
 ### 响应时间趋势
 ![response time](docs/perf_charts.png)
 
