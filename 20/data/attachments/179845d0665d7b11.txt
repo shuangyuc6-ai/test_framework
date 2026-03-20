@@ -1,4 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '440300', 'extensions': 'base'}  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: restapi.amap.com
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://restapi.amap.com:443 "GET /v3/weather/weatherInfo?key=313c3cfc0bd0dffdc7f38d0f5a1c227c&city=440300&extensions=base HTTP/1.1" 200 307
-INFO     core.http_client:http_client.py:22   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"广东","city":"深圳市","adcode":"440300","weather":"多云","temperature":"26","winddirection":"南","windpower":"≤3","humidity":"59"
