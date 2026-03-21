@@ -1,0 +1,2 @@
+[04:09:03] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'requests', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
+[04:09:04] [INFO] core.http_client -   ← 200  {"total_count":283902,"incomplete_results":false,"items":[{"id":36502,"node_id":"MDEwOlJlcG9zaXRvcnkzNjUwMg==","name":"git","full_name":"git/git","private":false,"owner":{"login":"git","id":18133,"nod

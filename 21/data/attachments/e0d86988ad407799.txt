@@ -1,2 +1,0 @@
-[04:18:56] [INFO] core.http_client - [GET] https://api.github.com/orgs/github  params=None  json=None
-[04:18:56] [INFO] core.http_client -   ← 200  {"login":"github","id":9919,"node_id":"MDEyOk9yZ2FuaXphdGlvbjk5MTk=","url":"https://api.github.com/orgs/github","repos_url":"https://api.github.com/orgs/github/repos","events_url":"https://api.github.
