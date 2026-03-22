@@ -1,0 +1,53 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"登录成功后截图，附加到 Allure 报告","0","test_login_success_screenshot","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"正常关键词搜索，应返回结果列表","0","test_search_returns_results[\u81ea\u52a8\u5316\u6d4b\u8bd5]","testcases.ui","Sun Mar 22 04:24:36 UTC 2026","broken","Sun Mar 22 04:24:36 UTC 2026","TestBaiduSearch","test_baidu","",""
+"特殊字符/数字搜索不应导致页面崩溃
+        纯空格等无效关键词百度可能不跳转结果页，只断言页面正常响应即可
+        ","0","test_special_character_search[123456]","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"空字段提交应出现错误提示，不得登录成功","0","test_login_with_empty_fields[empty_username]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"校验顶层响应字段完整性","1853","test_response_fields_completeness","testcases.api","Sun Mar 22 04:24:31 UTC 2026","passed","Sun Mar 22 04:24:32 UTC 2026","TestWeatherAPI","test_weather","",""
+"错误用户名或密码应显示错误提示，不得登录成功","0","test_login_with_invalid_credentials[wrong_password]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"获取 torvalds 用户信息，字段应完整","46","test_get_known_user","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubUser","test_github","",""
+"per_page 参数生效，返回条数与请求一致","251","test_search_repo_pagination","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubSearchRepo","test_github","",""
+"传入无效城市编码，接口应返回错误或 lives 数据为空/无效","852","test_invalid_city_code","testcases.api","Sun Mar 22 04:24:32 UTC 2026","passed","Sun Mar 22 04:24:33 UTC 2026","TestWeatherAPI","test_weather","",""
+"特殊字符/数字搜索不应导致页面崩溃
+        纯空格等无效关键词百度可能不跳转结果页，只断言页面正常响应即可
+        ","0","test_special_character_search[@#$%]","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"正常城市编码应返回天气数据，状态码200，infocode为10000","1249","test_get_weather_success[110000-\u5317\u4eac]","testcases.api","Sun Mar 22 04:24:27 UTC 2026","passed","Sun Mar 22 04:24:28 UTC 2026","TestWeatherAPI","test_weather","",""
+"获取 torvalds/linux 的 topics，响应应包含 names 数组","84","test_get_repo_topics","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubRepo","test_github","",""
+"不存在的仓库应返回 404","32","test_get_nonexistent_repo","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubRepo","test_github","",""
+"GitHub API 响应头应包含 Rate-Limit 相关字段","9","test_rate_limit_headers","testcases.api","Sun Mar 22 04:24:27 UTC 2026","passed","Sun Mar 22 04:24:27 UTC 2026","TestGitHubResponseHeaders","test_github","",""
+"正常城市编码应返回天气数据，状态码200，infocode为10000","855","test_get_weather_success[440300-\u6df1\u5733]","testcases.api","Sun Mar 22 04:24:30 UTC 2026","passed","Sun Mar 22 04:24:31 UTC 2026","TestWeatherAPI","test_weather","",""
+"获取 torvalds/linux 仓库详情，字段应完整","90","test_get_known_repo","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubRepo","test_github","",""
+"搜索后截图，附加到 Allure 报告","0","test_search_with_screenshot","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"搜索框和搜索按钮应在首页存在于 DOM 中（百度弹窗可能遮挡 CSS visibility）","0","test_search_input_visible","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"空关键词应返回 422 参数错误","25","test_search_repo_empty_keyword","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubSearchRepo","test_github","",""
+"正常关键词搜索，应返回结果列表","0","test_search_returns_results[Python]","testcases.ui","Sun Mar 22 04:24:36 UTC 2026","broken","Sun Mar 22 04:24:36 UTC 2026","TestBaiduSearch","test_baidu","",""
+"登录成功后页面应有退出链接，且不再显示登录按钮","0","test_login_redirect_and_elements","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"不传 Key 应返回鉴权失败","843","test_missing_api_key","testcases.api","Sun Mar 22 04:24:33 UTC 2026","passed","Sun Mar 22 04:24:34 UTC 2026","TestWeatherAPI","test_weather","",""
+"正常城市编码应返回天气数据，状态码200，infocode为10000","925","test_get_weather_success[440100-\u5e7f\u5dde]","testcases.api","Sun Mar 22 04:24:29 UTC 2026","passed","Sun Mar 22 04:24:30 UTC 2026","TestWeatherAPI","test_weather","",""
+"使用官方公开测试账号登录，应跳转到 Secure Area 页","0","test_login_success","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"不存在的用户名应返回 404","25","test_get_nonexistent_user","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubUser","test_github","",""
+"正常关键词搜索，应返回结果列表","0","test_search_returns_results[\u6d4b\u8bd5\u5f00\u53d1\u5de5\u7a0b\u5e08]","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"不存在的组织应返回 404","26","test_get_nonexistent_org","testcases.api","Sun Mar 22 04:24:27 UTC 2026","passed","Sun Mar 22 04:24:27 UTC 2026","TestGitHubOrg","test_github","",""
+"打开百度首页，标题应包含'百度'","0","test_homepage_title","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"获取用户仓库列表，应为数组且每项含仓库基本信息","71","test_get_user_repos","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubUser","test_github","",""
+"获取仓库贡献者列表，返回数组且字段完整
+        注：torvalds/linux 贡献者数量过大，GitHub API 会返回 403，
+        改用 pytest/pytest（规模适中的知名仓库）
+        ","263","test_get_repo_contributors","testcases.api","Sun Mar 22 04:24:26 UTC 2026","passed","Sun Mar 22 04:24:27 UTC 2026","TestGitHubRepo","test_github","",""
+"按关键词搜索仓库，应返回结果且字段完整","213","test_search_repo_by_keyword[pytest]","testcases.api","Sun Mar 22 04:24:25 UTC 2026","passed","Sun Mar 22 04:24:25 UTC 2026","TestGitHubSearchRepo","test_github","",""
+"特殊字符/数字搜索不应导致页面崩溃
+        纯空格等无效关键词百度可能不跳转结果页，只断言页面正常响应即可
+        ","0","test_special_character_search[   ]","testcases.ui","Sun Mar 22 04:24:37 UTC 2026","broken","Sun Mar 22 04:24:37 UTC 2026","TestBaiduSearch","test_baidu","",""
+"正常关键词搜索，应返回结果列表","0","test_search_returns_results[Pytest\u6846\u67b6]","testcases.ui","Sun Mar 22 04:24:36 UTC 2026","broken","Sun Mar 22 04:24:36 UTC 2026","TestBaiduSearch","test_baidu","",""
+"空字段提交应出现错误提示，不得登录成功","0","test_login_with_empty_fields[empty_password]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"extensions=all 返回预报数据，应包含 forecasts 字段","863","test_forecast_weather","testcases.api","Sun Mar 22 04:24:34 UTC 2026","passed","Sun Mar 22 04:24:35 UTC 2026","TestWeatherAPI","test_weather","",""
+"API 响应 Content-Type 应为 application/json","8","test_content_type_is_json","testcases.api","Sun Mar 22 04:24:27 UTC 2026","passed","Sun Mar 22 04:24:27 UTC 2026","TestGitHubResponseHeaders","test_github","",""
+"空字段提交应出现错误提示，不得登录成功","0","test_login_with_empty_fields[empty_all]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"按关键词搜索仓库，应返回结果且字段完整","222","test_search_repo_by_keyword[requests]","testcases.api","Sun Mar 22 04:24:25 UTC 2026","passed","Sun Mar 22 04:24:26 UTC 2026","TestGitHubSearchRepo","test_github","",""
+"按关键词搜索仓库，应返回结果且字段完整","210","test_search_repo_by_keyword[playwright]","testcases.api","Sun Mar 22 04:24:25 UTC 2026","passed","Sun Mar 22 04:24:25 UTC 2026","TestGitHubSearchRepo","test_github","",""
+"获取 github 组织信息，字段应完整","63","test_get_known_org","testcases.api","Sun Mar 22 04:24:27 UTC 2026","passed","Sun Mar 22 04:24:27 UTC 2026","TestGitHubOrg","test_github","",""
+"错误用户名或密码应显示错误提示，不得登录成功","0","test_login_with_invalid_credentials[wrong_both]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"错误用户名或密码应显示错误提示，不得登录成功","0","test_login_with_invalid_credentials[wrong_username]","testcases.ui","Sun Mar 22 04:24:38 UTC 2026","broken","Sun Mar 22 04:24:38 UTC 2026","TestExpandTestingLogin","test_opencart_login","",""
+"正常城市编码应返回天气数据，状态码200，infocode为10000","843","test_get_weather_success[310000-\u4e0a\u6d77]","testcases.api","Sun Mar 22 04:24:28 UTC 2026","passed","Sun Mar 22 04:24:29 UTC 2026","TestWeatherAPI","test_weather","",""
