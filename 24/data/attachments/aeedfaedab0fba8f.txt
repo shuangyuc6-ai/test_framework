@@ -1,0 +1,2 @@
+[04:33:02] [INFO] core.http_client - [GET] https://api.github.com/orgs/this-org-definitely-not-exist-xyzxyz  params=None  json=None
+[04:33:03] [INFO] core.http_client -   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest/orgs/orgs#get-an-organization","status":"404"}
