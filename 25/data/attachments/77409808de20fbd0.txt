@@ -1,0 +1,2 @@
+[04:24:41] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '310000', 'extensions': 'all'}  json=None
+[04:24:42] [INFO] core.http_client -   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","forecasts":[{"city":"上海市","adcode":"310000","province":"上海","reporttime":"2026-03-24 12:05:05","casts":[{"date":"2026-03-24","week":"2","daywe

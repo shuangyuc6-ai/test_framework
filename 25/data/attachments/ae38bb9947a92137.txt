@@ -1,0 +1,1 @@
+[04:23:45] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '110000', 'extensions': 'base'}  json=None

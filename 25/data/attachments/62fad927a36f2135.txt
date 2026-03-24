@@ -1,0 +1,4 @@
+INFO     core.http_client:http_client.py:20 [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '110000'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (5): restapi.amap.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://restapi.amap.com:443 "GET /v3/weather/weatherInfo?key=313c3cfc0bd0dffdc7f38d0f5a1c227c&city=110000 HTTP/1.1" 200 304
+INFO     core.http_client:http_client.py:22   ← 200  {"status":"1","count":"1","info":"OK","infocode":"10000","lives":[{"province":"北京","city":"北京市","adcode":"110000","weather":"霾","temperature":"15","winddirection":"北","windpower":"≤3","humidity":"41",

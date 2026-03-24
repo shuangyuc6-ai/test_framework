@@ -1,2 +1,0 @@
-[04:33:00] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'pytest', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
-[04:33:01] [INFO] core.http_client -   ← 200  {"total_count":45037,"incomplete_results":false,"items":[{"id":37489525,"node_id":"MDEwOlJlcG9zaXRvcnkzNzQ4OTUyNQ==","name":"pytest","full_name":"pytest-dev/pytest","private":false,"owner":{"login":"p
