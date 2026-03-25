@@ -1,2 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'key': '313c3cfc0bd0dffdc7f38d0f5a1c227c', 'city': '440300', 'extensions': 'base'}  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (4): restapi.amap.com:443

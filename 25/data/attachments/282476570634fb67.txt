@@ -1,2 +1,0 @@
-[04:23:45] [INFO] core.http_client - [GET] https://api.github.com/users/torvalds/repos  params={'per_page': 5}  json=None
-[04:23:45] [INFO] core.http_client -   ← 200  [{"id":940929652,"node_id":"R_kgDOOBVydA","name":"1590A","full_name":"torvalds/1590A","private":false,"owner":{"login":"torvalds","id":1024025,"node_id":"MDQ6VXNlcjEwMjQwMjU=","avatar_url":"https://av

@@ -1,0 +1,2 @@
+[04:25:12] [INFO] core.http_client - [GET] https://api.github.com/repos/this-owner-xyz/this-repo-xyz-not-exist  params=None  json=None
+[04:25:12] [INFO] core.http_client -   ← 403  {"message":"API rate limit exceeded for 145.132.101.177. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":

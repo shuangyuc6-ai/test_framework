@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/users/torvalds/repos  params={'per_page': 5}  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /users/torvalds/repos?per_page=5 HTTP/1.1" 200 None
-INFO     core.http_client:http_client.py:22   ← 200  [{"id":940929652,"node_id":"R_kgDOOBVydA","name":"1590A","full_name":"torvalds/1590A","private":false,"owner":{"login":"torvalds","id":1024025,"node_id":"MDQ6VXNlcjEwMjQwMjU=","avatar_url":"https://av
