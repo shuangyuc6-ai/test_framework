@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/users/torvalds  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /users/torvalds HTTP/1.1" 403 281
-INFO     core.http_client:http_client.py:22   ← 403  {"message":"API rate limit exceeded for 145.132.101.177. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":
