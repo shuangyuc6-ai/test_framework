@@ -1,0 +1,2 @@
+[04:27:54] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': ''}  json=None
+[04:27:54] [INFO] core.http_client -   ← 422  {"message":"Validation Failed","errors":[{"resource":"Search","field":"q","code":"missing"}],"documentation_url":"https://docs.github.com/v3/search","status":"422"}
