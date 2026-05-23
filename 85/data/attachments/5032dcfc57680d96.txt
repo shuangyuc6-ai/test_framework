@@ -1,0 +1,3 @@
+INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/search/repositories  params={'q': 'playwright', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /search/repositories?q=playwright&per_page=5&sort=stars&order=desc HTTP/1.1" 200 None
+INFO     core.http_client:http_client.py:22   ← 200  {"total_count":114690,"incomplete_results":false,"items":[{"id":881458615,"node_id":"R_kgDONIn9tw","name":"browser-use","full_name":"browser-use/browser-use","private":false,"owner":{"login":"browser-
