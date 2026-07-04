@@ -1,0 +1,4 @@
+INFO     core.http_client:http_client.py:20 [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'city': '110000'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:289 Resetting dropped connection: restapi.amap.com
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://restapi.amap.com:443 "GET /v3/weather/weatherInfo?city=110000 HTTP/1.1" 200 None
+INFO     core.http_client:http_client.py:22   ← 200  {"status":"0","info":"INVALID_USER_KEY","infocode":"10001"}
