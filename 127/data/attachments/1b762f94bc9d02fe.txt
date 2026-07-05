@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/repos/torvalds/linux/topics  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /repos/torvalds/linux/topics HTTP/1.1" 200 12
-INFO     core.http_client:http_client.py:22   ← 200  {"names":[]}
