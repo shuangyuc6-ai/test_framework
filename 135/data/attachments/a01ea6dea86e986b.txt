@@ -1,0 +1,1 @@
+[05:33:42] [INFO] core.http_client - [GET] https://restapi.amap.com/v3/weather/weatherInfo  params={'city': '110000'}  json=None
