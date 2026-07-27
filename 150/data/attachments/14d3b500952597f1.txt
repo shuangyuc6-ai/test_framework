@@ -1,0 +1,2 @@
+[05:55:38] [INFO] core.http_client - [GET] https://api.github.com/users/torvalds  params=None  json=None
+[05:55:38] [INFO] core.http_client -   ← 403  {"message":"API rate limit exceeded for 20.169.99.128. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":"h
