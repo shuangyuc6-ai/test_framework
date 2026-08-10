@@ -1,2 +1,0 @@
-[03:46:56] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'playwright', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
-[03:46:56] [INFO] core.http_client -   ← 200  {"total_count":141895,"incomplete_results":false,"items":[{"id":881458615,"node_id":"R_kgDONIn9tw","name":"browser-use","full_name":"browser-use/browser-use","private":false,"owner":{"login":"browser-
