@@ -1,2 +1,0 @@
-[03:05:40] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'requests', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
-[03:05:40] [INFO] core.http_client -   ← 200  {"total_count":326107,"incomplete_results":false,"items":[{"id":872119017,"node_id":"R_kgDOM_t66Q","name":"Scrapling","full_name":"D4Vinci/Scrapling","private":false,"owner":{"login":"D4Vinci","id":20
