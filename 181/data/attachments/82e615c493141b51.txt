@@ -1,0 +1,2 @@
+[12:37:20] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'requests', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
+[12:37:20] [INFO] core.http_client -   ← 200  {"total_count":329215,"incomplete_results":false,"items":[{"id":21737465,"node_id":"MDEwOlJlcG9zaXRvcnkyMTczNzQ2NQ==","name":"awesome","full_name":"sindresorhus/awesome","private":false,"owner":{"logi
