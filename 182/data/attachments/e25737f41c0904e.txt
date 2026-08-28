@@ -1,0 +1,2 @@
+[14:08:57] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': 'python', 'per_page': 3}  json=None
+[14:08:57] [INFO] core.http_client -   ← 200  {"total_count":7024045,"incomplete_results":false,"items":[{"id":63476337,"node_id":"MDEwOlJlcG9zaXRvcnk2MzQ3NjMzNw==","name":"Python","full_name":"TheAlgorithms/Python","private":false,"owner":{"logi
