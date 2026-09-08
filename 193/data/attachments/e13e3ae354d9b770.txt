@@ -1,0 +1,1 @@
+[07:04:07] [INFO] core.http_client - [GET] https://api.github.com/users/torvalds  params=None  json=None

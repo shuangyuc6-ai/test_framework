@@ -1,0 +1,1 @@
+[07:05:05] [INFO] core.http_client - [GET] https://api.github.com/repos/pytest-dev/pytest/contributors  params={'per_page': 3, 'anon': 'false'}  json=None

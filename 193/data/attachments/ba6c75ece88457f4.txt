@@ -1,0 +1,2 @@
+INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/search/repositories  params={'q': 'requests', 'per_page': 5, 'sort': 'stars', 'order': 'desc'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:1062 Starting new HTTPS connection (2): api.github.com:443

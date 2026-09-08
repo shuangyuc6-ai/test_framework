@@ -1,0 +1,1 @@
+[07:03:57] [INFO] core.http_client - [GET] https://api.github.com/search/repositories  params={'q': ''}  json=None

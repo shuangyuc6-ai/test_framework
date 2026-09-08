@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/repos/this-owner-xyz/this-repo-xyz-not-exist  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /repos/this-owner-xyz/this-repo-xyz-not-exist HTTP/1.1" 404 121
-INFO     core.http_client:http_client.py:22   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}
