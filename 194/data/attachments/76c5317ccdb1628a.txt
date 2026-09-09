@@ -1,0 +1,3 @@
+INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/repos/pytest-dev/pytest/contributors  params={'per_page': 3, 'anon': 'false'}  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /repos/pytest-dev/pytest/contributors?per_page=3&anon=false HTTP/1.1" 200 536
+INFO     core.http_client:http_client.py:22   ← 200  [{"login":"nicoddemus","id":1085180,"node_id":"MDQ6VXNlcjEwODUxODA=","avatar_url":"https://avatars.githubusercontent.com/u/1085180?v=4","gravatar_id":"","url":"https://api.github.com/users/nicoddemus"

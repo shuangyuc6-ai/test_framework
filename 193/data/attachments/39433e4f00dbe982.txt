@@ -1,2 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/orgs/this-org-definitely-not-exist-xyzxyz  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:1062 Starting new HTTPS connection (11): api.github.com:443

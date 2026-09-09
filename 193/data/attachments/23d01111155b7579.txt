@@ -1,2 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/repos/torvalds/linux/topics  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:1062 Starting new HTTPS connection (8): api.github.com:443

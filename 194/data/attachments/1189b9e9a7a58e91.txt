@@ -1,0 +1,3 @@
+INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/users/this-user-definitely-does-not-exist-xyzxyz123  params=None  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /users/this-user-definitely-does-not-exist-xyzxyz123 HTTP/1.1" 404 101
+INFO     core.http_client:http_client.py:22   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}

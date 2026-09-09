@@ -1,0 +1,3 @@
+INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/users/torvalds  params=None  json=None
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /users/torvalds HTTP/1.1" 200 501
+INFO     core.http_client:http_client.py:22   ← 200  {"login":"torvalds","id":1024025,"node_id":"MDQ6VXNlcjEwMjQwMjU=","avatar_url":"https://avatars.githubusercontent.com/u/1024025?v=4","gravatar_id":"","url":"https://api.github.com/users/torvalds","htm
