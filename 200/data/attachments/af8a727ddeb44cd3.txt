@@ -1,3 +1,0 @@
-INFO     core.http_client:http_client.py:20 [GET] https://api.github.com/orgs/this-org-definitely-not-exist-xyzxyz  params=None  json=None
-DEBUG    urllib3.connectionpool:connectionpool.py:544 https://api.github.com:443 "GET /orgs/this-org-definitely-not-exist-xyzxyz HTTP/1.1" 404 122
-INFO     core.http_client:http_client.py:22   ← 404  {"message":"Not Found","documentation_url":"https://docs.github.com/rest/orgs/orgs#get-an-organization","status":"404"}
